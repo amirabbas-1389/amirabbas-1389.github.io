@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ORYNT — Science · Technology · World</title>
+  <meta name="description" content="ORYNT — independent coverage of science, technology, research, computing, space and world affairs.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="#">ORYNT<span>.</span></a>
+    <nav>
+      <a href="#science">Science</a>
+      <a href="#space">Space</a>
+      <a href="#tech">Technology</a>
+      <a href="#computing">Computing</a>
+      <a href="#research">Research</a>
+      <a href="#world">World</a>
+      <a href="#explained">Explained</a>
+    </nav>
+    <div class="actions">
+      <button id="langBtn" aria-label="Switch language">FA</button>
+      <button id="searchBtn" aria-label="Search">⌕</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero container">
+    <div class="hero-copy">
+      <p class="eyebrow">SCIENCE · TECHNOLOGY · WORLD</p>
+      <h1>Understand what is happening.<br><em>Discover what comes next.</em></h1>
+      <p class="lead">A modern knowledge and news platform covering science, space, computing, emerging technology, research and major world affairs.</p>
+      <div class="hero-buttons">
+        <a class="button primary" href="#latest">Explore latest</a>
+        <a class="button ghost" href="#explained">Read Explained</a>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <span class="tag">FEATURED</span>
+      <h2>The race for next-generation chips is changing computing</h2>
+      <p>Why semiconductor research matters — and what to watch next.</p>
+      <span class="meta">Explainer · 8 min read</span>
+    </aside>
+  </section>
+
+  <section id="latest" class="container section">
+    <div class="section-head"><h2>Latest</h2><a href="#">View all →</a></div>
+    <div class="news-grid">
+      <article class="news-card"><span class="tag science">SCIENCE</span><h3>How researchers turn difficult questions into testable discoveries</h3><p>From laboratories to peer-reviewed research, a guide to how modern science moves forward.</p><span class="meta">6 min read</span></article>
+      <article class="news-card"><span class="tag space">SPACE</span><h3>What the next generation of space missions is trying to discover</h3><p>A concise look at exploration, instruments and the questions behind new missions.</p><span class="meta">5 min read</span></article>
+      <article class="news-card"><span class="tag tech">TECH</span><h3>Why advanced semiconductors are becoming strategically important</h3><p>The technology, manufacturing challenge and global competition behind modern chips.</p><span class="meta">7 min read</span></article>
+    </div>
+  </section>
+
+  <section id="explained" class="container section explained">
+    <div>
+      <p class="eyebrow">ORYNT EXPLAINED</p>
+      <h2>We don't just report the event.<br>We explain why it matters.</h2>
+      <p>Every major story can be understood through context: what happened, how it works, who is involved, what the evidence says and what remains uncertain.</p>
+      <a class="button primary" href="#">Explore explainers</a>
+    </div>
+    <div class="explainer-list">
+      <div><span>01</span><strong>Why are advanced chips so hard to manufacture?</strong></div>
+      <div><span>02</span><strong>How does a space telescope actually see distant objects?</strong></div>
+      <div><span>03</span><strong>What makes a research paper credible?</strong></div>
+    </div>
+  </section>
+
+  <section class="container section categories">
+    <div id="science"><span class="big-icon">01</span><h2>Science</h2><p>Physics, biology, chemistry, Earth science and major scientific institutions.</p></div>
+    <div id="space"><span class="big-icon">02</span><h2>Space</h2><p>Missions, astronomy, exploration, agencies and space technology.</p></div>
+    <div id="tech"><span class="big-icon">03</span><h2>Technology</h2><p>AI, semiconductors, robotics, quantum computing and emerging technologies.</p></div>
+    <div id="computing"><span class="big-icon">04</span><h2>Computing</h2><p>Programming, software, cybersecurity, hardware and developer news.</p></div>
+    <div id="research"><span class="big-icon">05</span><h2>Research</h2><p>New papers, universities, research institutions and research explained.</p></div>
+    <div id="world"><span class="big-icon">06</span><h2>World</h2><p>Politics, geopolitics, international affairs and major global events.</p></div>
+  </section>
+
+  <section class="container sources">
+    <div>
+      <p class="eyebrow">SOURCE-FIRST JOURNALISM</p>
+      <h2>Every important claim should have a trail.</h2>
+    </div>
+    <p>ORYNT is designed around primary sources, research papers, official statements and clearly attributed reporting. News, analysis and explainers are labeled separately.</p>
+  </section>
+
+  <section class="newsletter container">
+    <div><p class="eyebrow">THE ORYNT BRIEF</p><h2>The important stories, without the noise.</h2><p>Newsletter signup will be connected when the publishing system is ready.</p></div>
+    <form onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email"><button class="button primary">Join</button></form>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div><a class="brand" href="#">ORYNT<span>.</span></a><p>Science · Technology · World</p></div>
+    <div><a href="#">About</a><a href="#">Editorial policy</a><a href="#">Sources</a><a href="#">Contact</a></div>
+    <div><span>© 2026 ORYNT</span><span>Independent concept / prototype</span></div>
+  </div>
+</footer>
+
+<div id="searchModal" class="modal" aria-hidden="true">
+  <div class="modal-box"><button id="closeSearch">×</button><h2>Search ORYNT</h2><input id="searchInput" type="search" placeholder="Search science, space, technology..."><p>Search will become fully functional when the content backend is connected.</p></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
