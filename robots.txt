@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://amirabbas-1389.github.io/sitemap.xml
