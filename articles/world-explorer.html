@@ -12,7 +12,7 @@
     .map-shell{margin-top:42px;border:1px solid var(--line);background:#08120f;overflow:hidden;position:relative}
     .map-toolbar{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:16px 20px;border-bottom:1px solid var(--line);color:var(--muted);font-size:13px}
     .map-status{color:var(--accent);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:10px}
-    #worldMap{width:100%;height:auto;display:block;min-height:420px;background:#dfe8e5}
+    #worldMap{width:100%;height:auto;aspect-ratio:960 / 520;display:block;min-height:420px;background:#dfe8e5}
     .country{fill:#54736b;stroke:#263d36;stroke-width:.7;cursor:pointer;transition:fill .15s,stroke .15s}
     .country:hover,.country:focus{fill:#f2b84b;stroke:#15221e;stroke-width:1.3;outline:none}
     .country.selected{fill:#f2b84b;stroke:#15221e;stroke-width:1.3}
@@ -34,7 +34,7 @@
     .explorer-search{display:flex;gap:10px;margin-top:24px}
     .explorer-search input{flex:1;background:#0d1110;border:1px solid var(--line);color:#fff;padding:13px 15px;font:inherit}
     .explorer-search button{border:1px solid var(--line);background:transparent;color:#fff;padding:0 18px;cursor:pointer}
-    @media(max-width:700px){.world-explorer{padding:55px 0 70px}.map-toolbar{align-items:flex-start;flex-direction:column}.country-panel{position:fixed;left:18px;right:18px;top:90px;width:auto}.country-facts{grid-template-columns:1fr}.country-fact:nth-child(odd){border-right:0;padding-right:0}.country-fact:nth-child(even){padding-left:0}}
+    @media(max-width:700px){.world-explorer{padding:55px 0 70px}.map-toolbar{align-items:flex-start;flex-direction:column}#worldMap{height:300px;min-height:0;aspect-ratio:auto}.country-panel{position:fixed;left:18px;right:18px;top:90px;width:auto}.country-facts{grid-template-columns:1fr}.country-fact:nth-child(odd){border-right:0;padding-right:0}.country-fact:nth-child(even){padding-left:0}}
   </style>
 </head>
 <body>
@@ -57,7 +57,7 @@
 
   <section class="map-shell" aria-label="Interactive world map">
     <div class="map-toolbar"><span>INTERACTIVE WORLD MAP</span><span id="mapStatus" class="map-status">Loading map…</span></div>
-    <svg id="worldMap" viewBox="0 0 960 520" role="img" aria-label="Interactive map of the world"></svg>
+    <svg id="worldMap" viewBox="0 0 960 520" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Interactive map of the world"></svg>
     <div class="map-help">Select a country on the map or use the search box above.</div>
 
     <aside id="countryPanel" class="country-panel" aria-live="polite">
