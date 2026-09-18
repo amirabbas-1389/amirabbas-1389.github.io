@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Explore the World — Interactive Country Map | ORYNT</title>
+  <meta name="description" content="Explore an interactive world map and discover essential facts about countries, including flags, capitals, populations, areas, currencies and regions.">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../content.css">
+  <style>
+    .world-explorer{max-width:1200px;padding:80px 0 100px}
+    .map-shell{margin-top:42px;border:1px solid var(--line);background:rgba(255,255,255,.02);overflow:hidden;position:relative}
+    .map-toolbar{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:16px 20px;border-bottom:1px solid var(--line);color:var(--muted);font-size:13px}
+    .map-status{color:var(--accent);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:10px}
+    #worldMap{width:100%;height:auto;display:block;min-height:420px;background:radial-gradient(circle at 50% 45%,rgba(70,255,150,.055),transparent 48%)}
+    .country{fill:#17201d;stroke:#53605a;stroke-width:.55;cursor:pointer;transition:fill .15s,stroke .15s}
+    .country:hover,.country:focus{fill:var(--accent);stroke:#fff;outline:none}
+    .country.selected{fill:var(--accent);stroke:#fff}
+    .map-help{text-align:center;padding:12px 18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+    .country-panel{display:none;position:absolute;z-index:5;right:20px;top:72px;width:min(360px,calc(100% - 40px));background:#0b0e0d;border:1px solid var(--line);box-shadow:0 20px 60px rgba(0,0,0,.45);padding:24px}
+    .country-panel.open{display:block}
+    .country-panel button{float:right;border:0;background:transparent;color:var(--muted);font-size:24px;cursor:pointer}
+    .country-title{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+    .country-flag{font-size:42px;line-height:1}
+    .country-title h2{margin:0;font-size:27px}
+    .country-region{margin:5px 0 0;color:var(--accent);font-size:10px;font-weight:900;letter-spacing:.13em;text-transform:uppercase}
+    .country-facts{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+    .country-fact{padding:14px 8px 14px 0;border-bottom:1px solid var(--line)}
+    .country-fact:nth-child(odd){border-right:1px solid var(--line);padding-right:14px}
+    .country-fact:nth-child(even){padding-left:14px}
+    .country-fact span{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px}
+    .country-fact strong{font-size:14px;color:#eef2f0}
+    .data-note{margin-top:28px;color:var(--muted);font-size:12px}
+    .explorer-search{display:flex;gap:10px;margin-top:24px}
+    .explorer-search input{flex:1;background:#0d1110;border:1px solid var(--line);color:#fff;padding:13px 15px;font:inherit}
+    .explorer-search button{border:1px solid var(--line);background:transparent;color:#fff;padding:0 18px;cursor:pointer}
+    @media(max-width:700px){.world-explorer{padding:55px 0 70px}.map-toolbar{align-items:flex-start;flex-direction:column}.country-panel{position:fixed;left:18px;right:18px;top:90px;width:auto}.country-facts{grid-template-columns:1fr}.country-fact:nth-child(odd){border-right:0;padding-right:0}.country-fact:nth-child(even){padding-left:0}}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../index.html">ORYNT<span>.</span></a>
+    <nav><a href="../science.html">Science</a><a href="../space.html">Space</a><a href="../technology.html">Technology</a><a href="../computing.html">Computing</a><a href="../research.html">Research</a><a href="../world.html">World</a><a href="../explained.html">Explained</a></nav>
+  </div>
+</header>
+
+<main class="container world-explorer">
+  <div class="article-meta">WORLD · INTERACTIVE</div>
+  <h1>Explore the World</h1>
+  <p class="article-deck">Click a country to explore essential facts — including its flag, capital, population, area, currency and region.</p>
+
+  <div class="explorer-search">
+    <input id="countrySearch" type="search" placeholder="Search for a country..." aria-label="Search for a country">
+    <button id="searchCountry" type="button">Find</button>
+  </div>
+
+  <section class="map-shell" aria-label="Interactive world map">
+    <div class="map-toolbar"><span>INTERACTIVE WORLD MAP</span><span id="mapStatus" class="map-status">Loading map…</span></div>
+    <svg id="worldMap" viewBox="0 0 960 520" role="img" aria-label="Interactive map of the world"></svg>
+    <div class="map-help">Select a country on the map or use the search box above.</div>
+
+    <aside id="countryPanel" class="country-panel" aria-live="polite">
+      <button id="closePanel" aria-label="Close country information">×</button>
+      <div class="country-title">
+        <div id="countryFlag" class="country-flag">🌍</div>
+        <div><h2 id="countryName">Country</h2><p id="countryRegion" class="country-region"></p></div>
+      </div>
+      <div class="country-facts">
+        <div class="country-fact"><span>Capital</span><strong id="factCapital">—</strong></div>
+        <div class="country-fact"><span>Population</span><strong id="factPopulation">—</strong></div>
+        <div class="country-fact"><span>Area</span><strong id="factArea">—</strong></div>
+        <div class="country-fact"><span>Currency</span><strong id="factCurrency">—</strong></div>
+        <div class="country-fact"><span>Language</span><strong id="factLanguage">—</strong></div>
+        <div class="country-fact"><span>Calling code</span><strong id="factCalling">—</strong></div>
+      </div>
+    </aside>
+  </section>
+
+  <p class="data-note">Country boundaries: world-atlas / Natural Earth public-domain data. Country facts: REST Countries. Population figures are estimates and may change as official datasets are updated.</p>
+</main>
+
+<footer><div class="container footer-grid"><div><a class="brand" href="../index.html">ORYNT<span>.</span></a><p>Science · Technology · World</p></div><div><a href="../about.html">About</a><a href="../editorial.html">Editorial policy</a><a href="../sources.html">Sources</a><a href="../contact.html">Contact</a></div><div><span>© 2026 ORYNT</span><span>Independent concept / prototype</span></div></div></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+<script>
+(async function(){
+  const svg = d3.select('#worldMap');
+  const status = document.getElementById('mapStatus');
+  const panel = document.getElementById('countryPanel');
+  const names = new Map();
+  let countryData = [];
+  let countries = [];
+  let selectedId = null;
+
+  const normalize = s => (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'');
+  const fmt = n => typeof n === 'number' ? new Intl.NumberFormat('en-US').format(n) : '—';
+
+  function flagFromCode(code){
+    if(!code || code.length !== 2) return '🌍';
+    return code.toUpperCase().replace(/./g,c=>String.fromCodePoint(127397+c.charCodeAt(0)));
+  }
+
+  function pickByName(name){
+    const n = normalize(name);
+    return countryData.find(c => normalize(c.name?.common) === n) ||
+      countryData.find(c => normalize(c.name?.official) === n) ||
+      countryData.find(c => normalize(c.name?.common).includes(n) || n.includes(normalize(c.name?.common)));
+  }
+
+  function showCountry(name, feature){
+    const data = pickByName(name);
+    selectedId = feature?.id;
+    document.querySelectorAll('.country.selected').forEach(x=>x.classList.remove('selected'));
+    if(feature) document.getElementById('c-'+feature.id)?.classList.add('selected');
+
+    document.getElementById('countryName').textContent = data?.name?.common || name;
+    document.getElementById('countryFlag').textContent = flagFromCode(data?.cca2);
+    document.getElementById('countryRegion').textContent = data ? [data.region,data.subregion].filter(Boolean).join(' · ') : 'Country information';
+    document.getElementById('factCapital').textContent = data?.capital?.[0] || '—';
+    document.getElementById('factPopulation').textContent = data?.population ? fmt(data.population) : '—';
+    document.getElementById('factArea').textContent = data?.area ? fmt(Math.round(data.area)) + ' km²' : '—';
+    const currency = data?.currencies ? Object.values(data.currencies)[0] : null;
+    document.getElementById('factCurrency').textContent = currency ? [currency.name,currency.symbol].filter(Boolean).join(' · ') : '—';
+    document.getElementById('factLanguage').textContent = data?.languages ? Object.values(data.languages).slice(0,2).join(', ') : '—';
+    document.getElementById('factCalling').textContent = data?.idd?.root ? data.idd.root + (data.idd.suffixes?.length === 1 ? data.idd.suffixes[0] : '') : '—';
+    panel.classList.add('open');
+  }
+
+  try{
+    status.textContent = 'Loading data…';
+    const [topo, tsvText, facts] = await Promise.all([
+      fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(r=>r.json()),
+      fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.tsv').then(r=>r.text()),
+      fetch('https://restcountries.com/v3.1/all?fields=name,flags,capital,population,area,currencies,languages,region,subregion,cca2,cca3,idd').then(r=>r.json())
+    ]);
+
+    tsvText.trim().split(/\n/).slice(1).forEach(line=>{
+      const [id,name] = line.split('\t');
+      if(id && name) names.set(String(id).trim(), name.trim());
+    });
+    countryData = facts;
+
+    const collection = topojson.feature(topo, topo.objects.countries);
+    countries = collection.features;
+
+    const projection = d3.geoNaturalEarth1().fitSize([960,520], collection);
+    const path = d3.geoPath(projection);
+
+    svg.selectAll('path')
+      .data(countries)
+      .join('path')
+      .attr('class','country')
+      .attr('id',d=>'c-'+d.id)
+      .attr('d',path)
+      .attr('tabindex',0)
+      .attr('aria-label',d=>names.get(String(d.id)) || 'Country')
+      .on('click',(_,d)=>showCountry(names.get(String(d.id)) || 'Country',d))
+      .on('keydown',(e,d)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();showCountry(names.get(String(d.id)) || 'Country',d);}});
+
+    status.textContent = countries.length + ' countries · ready';
+  }catch(error){
+    console.error(error);
+    status.textContent = 'Map data unavailable';
+    document.getElementById('worldMap').insertAdjacentHTML('afterend','<p class="data-note">The interactive map could not load its external geographic data. Please refresh the page and try again.</p>');
+  }
+
+  document.getElementById('closePanel').onclick = () => {
+    panel.classList.remove('open');
+    document.querySelectorAll('.country.selected').forEach(x=>x.classList.remove('selected'));
+  };
+
+  async function findCountry(){
+    const q = document.getElementById('countrySearch').value.trim();
+    if(!q) return;
+    const target = countries.find(f => normalize(names.get(String(f.id))) === normalize(q)) ||
+      countries.find(f => normalize(names.get(String(f.id)) || '').includes(normalize(q)));
+    if(target) showCountry(names.get(String(target.id)),target);
+  }
+  document.getElementById('searchCountry').onclick = findCountry;
+  document.getElementById('countrySearch').addEventListener('keydown',e=>{if(e.key==='Enter')findCountry();});
+})();
+</script>
+</body>
+</html>
