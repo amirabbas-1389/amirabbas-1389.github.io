@@ -21,7 +21,7 @@
     .country-panel.open{display:block}
     .country-panel button{float:right;border:0;background:transparent;color:var(--muted);font-size:24px;cursor:pointer}
     .country-title{display:flex;align-items:center;gap:14px;margin-bottom:20px}
-    .country-flag{width:64px;height:44px;object-fit:cover;display:block;border:1px solid var(--line);background:#18211e}
+    .country-flag{width:64px;height:44px;object-fit:cover;display:block;border:1px solid var(--line);background:#18211e;font-size:34px;line-height:44px;text-align:center}
     .country-title h2{margin:0;font-size:27px}
     .country-region{margin:5px 0 0;color:var(--accent);font-size:10px;font-weight:900;letter-spacing:.13em;text-transform:uppercase}
     .country-facts{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
@@ -63,7 +63,7 @@
     <aside id="countryPanel" class="country-panel" aria-live="polite">
       <button id="closePanel" aria-label="Close country information">×</button>
       <div class="country-title">
-        <img id="countryFlag" class="country-flag" src="" alt="Country flag">
+        <div id="countryFlag" class="country-flag" role="img" aria-label="Country flag">🌍</div>
         <div><h2 id="countryName">Country</h2><p id="countryRegion" class="country-region"></p></div>
       </div>
       <div class="country-facts">
@@ -129,14 +129,16 @@
 
     document.getElementById('countryName').textContent = data?.name?.common || name;
     const flag = document.getElementById('countryFlag');
-    if(data?.flags?.svg || data?.flags?.png){
-      flag.src = data.flags.svg || data.flags.png;
-      flag.alt = (data?.name?.common || name) + ' flag';
-      flag.style.display = 'block';
-    }else{
-      flag.removeAttribute('src');
-      flag.alt = 'Country flag';
-      flag.style.display = 'none';
+    const flagCode = (data?.cca2 || '').toLowerCase();
+    const flagName = data?.name?.common || name;
+    flag.textContent = flagFromCode(data?.cca2);
+    flag.setAttribute('aria-label', flagName + ' flag');
+    if(flagCode){
+      flag.style.backgroundImage = "url('https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/" + flagCode + ".svg')";
+      flag.style.backgroundSize = 'cover';
+      flag.style.backgroundPosition = 'center';
+      flag.style.backgroundRepeat = 'no-repeat';
+      flag.textContent = '';
     }
     document.getElementById('countryRegion').textContent = data ? [data.region,data.subregion].filter(Boolean).join(' · ') : 'Country information';
     document.getElementById('factCapital').textContent = data?.capital?.[0] || '—';
