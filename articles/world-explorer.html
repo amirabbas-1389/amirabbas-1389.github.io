@@ -155,9 +155,9 @@
       .attr('id',d=>'c-'+d.id)
       .attr('d',path)
       .attr('tabindex',0)
-      .attr('aria-label',d=>names.get(String(d.id)) || 'Country')
-      .on('click',(_,d)=>showCountry(names.get(String(d.id)) || 'Country',d))
-      .on('keydown',(e,d)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();showCountry(names.get(String(d.id)) || 'Country',d);}});
+      .attr('aria-label',d=>d.properties?.name || 'Country')
+      .on('click',(_,d)=>showCountry(d.properties?.name || 'Country',d))
+      .on('keydown',(e,d)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();showCountry(d.properties?.name || 'Country',d);}});
 
     status.textContent = countries.length + ' countries · ready';
   }catch(error){
@@ -174,9 +174,9 @@
   async function findCountry(){
     const q = document.getElementById('countrySearch').value.trim();
     if(!q) return;
-    const target = countries.find(f => normalize(names.get(String(f.id))) === normalize(q)) ||
-      countries.find(f => normalize(names.get(String(f.id)) || '').includes(normalize(q)));
-    if(target) showCountry(names.get(String(target.id)),target);
+    const target = countries.find(f => normalize(f.properties?.name) === normalize(q)) ||
+      countries.find(f => normalize(f.properties?.name || '').includes(normalize(q)));
+    if(target) showCountry(target.properties?.name || 'Country',target);
   }
   document.getElementById('searchCountry').onclick = findCountry;
   document.getElementById('countrySearch').addEventListener('keydown',e=>{if(e.key==='Enter')findCountry();});
