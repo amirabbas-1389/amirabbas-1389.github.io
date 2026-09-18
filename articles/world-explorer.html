@@ -122,7 +122,8 @@
   }
 
   function showCountry(name, feature){
-    const data = pickByName(name);
+    const featureId = feature ? String(feature.id).padStart(3,'0') : '';
+    const data = countryData.find(c => String(c.ccn3 || '').padStart(3,'0') === featureId) || pickByName(name);
     selectedId = feature?.id;
     document.querySelectorAll('.country.selected').forEach(x=>x.classList.remove('selected'));
     if(feature) document.getElementById('c-'+feature.id)?.classList.add('selected');
@@ -178,7 +179,7 @@
       .attr('id',d=>'c-'+d.id)
       .attr('d',path)
       .attr('tabindex',0)
-      .attr('aria-label',d=>d.properties?.name || 'Country')
+      .attr('aria-label',d=>countryData.find(c=>String(c.ccn3 || '').padStart(3,'0')===String(d.id).padStart(3,'0'))?.name?.common || d.properties?.name || 'Country')
       .on('click',(_,d)=>showCountry(d.properties?.name || 'Country',d))
       .on('keydown',(e,d)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();showCountry(d.properties?.name || 'Country',d);}});
 
