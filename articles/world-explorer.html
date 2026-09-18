@@ -130,17 +130,17 @@
 
   try{
     status.textContent = 'Loading data…';
-    const [topo, tsvText, facts] = await Promise.all([
-      fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(r=>r.json()),
-      fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.tsv').then(r=>r.text()),
-      fetch('https://restcountries.com/v3.1/all?fields=name,flags,capital,population,area,currencies,languages,region,subregion,cca2,cca3,idd').then(r=>r.json())
-    ]);
+    const topoResponse = await fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json');
+    if(!topoResponse.ok) throw new Error('World map data request failed');
+    const topo = await topoResponse.json();
 
-    tsvText.trim().split(/\n/).slice(1).forEach(line=>{
-      const [id,name] = line.split('\t');
-      if(id && name) names.set(String(id).trim(), name.trim());
-    });
-    countryData = facts;
+    try{
+      const factsResponse = await fetch('https://restcountries.com/v3.1/all?fields=name,flags,capital,population,area,currencies,languages,region,subregion,cca2,cca3,idd');
+      if(factsResponse.ok) countryData = await factsResponse.json();
+    }catch(factsError){
+      console.warn('Country facts unavailable; map will still work.', factsError);
+      countryData = [];
+    }
 
     const collection = topojson.feature(topo, topo.objects.countries);
     countries = collection.features;
