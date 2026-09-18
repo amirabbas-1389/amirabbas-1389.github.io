@@ -103,10 +103,22 @@
   }
 
   function pickByName(name){
+    const aliases = {
+      turkey: ['turkey','turkiye','türkiye'],
+      czechia: ['czechia','czechrepublic'],
+      czechrepublic: ['czechia','czechrepublic'],
+      iran: ['iran','islamicrepublicofiran'],
+      southkorea: ['southkorea','republicofkorea','korea'],
+      northkorea: ['northkorea','democraticpeoplesrepublicofkorea']
+    };
     const n = normalize(name);
-    return countryData.find(c => normalize(c.name?.common) === n) ||
-      countryData.find(c => normalize(c.name?.official) === n) ||
-      countryData.find(c => normalize(c.name?.common).includes(n) || n.includes(normalize(c.name?.common)));
+    const candidates = aliases[n] || [n];
+    return countryData.find(c => {
+      const common = normalize(c.name?.common);
+      const official = normalize(c.name?.official);
+      return candidates.includes(common) || candidates.includes(official) ||
+        candidates.some(x => common.includes(x) || x.includes(common));
+    });
   }
 
   function showCountry(name, feature){
