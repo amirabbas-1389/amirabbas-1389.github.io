@@ -48,6 +48,8 @@ window.ORYNT_SEARCH_INDEX=[
  {title:"Computing",url:"computing.html",category:"Computing",text:"computing chips software"},
  {title:"Research",url:"research.html",category:"Research",text:"papers research studies"},
  {title:"World",url:"world.html",category:"World",text:"world developments international affairs"},
+ {title:"JFK Assassination: Claims, Evidence and What the Records Show",url:"articles/jfk-assassination-claims-evidence.html",category:"Explained",text:"JFK John F Kennedy assassination claims evidence Warren Commission House Select Committee historical records"},
+ {title:"Princess Diana: Claims, Evidence and the Investigations",url:"articles/princess-diana-claims-evidence.html",category:"Explained",text:"Princess Diana conspiracy claims evidence Operation Paget investigation historical records"},
  {title:"Explained",url:"explained.html",category:"Explained",text:"explainers science technology"},
  {title:"Latest",url:"latest.html",category:"Latest",text:"latest ORYNT stories"}
 ];
