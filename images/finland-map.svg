@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 900">
+<rect width="700" height="900" rx="24" fill="#0b1117"/>
+<path d="M338 65l55 45 42 3 29 55 35 19 9 65 48 43-17 61 32 67-28 56 10 60-51 47-17 67-55 39-35 65-50-17-22-57-48-20-16-57-40-20 2-62-45-35 21-59-18-55 39-48-2-55 49-35 12-52 49-27 15-51 47-17z" fill="#54736b" stroke="#b9d1ca" stroke-width="6"/>
+<circle cx="330" cy="610" r="10" fill="#f2b84b"/><text x="350" y="618" fill="#f2b84b" font-family="Arial,sans-serif" font-size="24">Helsinki</text>
+<path d="M330 610L350 575" stroke="#f2b84b" stroke-width="3"/>
+<text x="350" y="820" fill="#dce7e4" font-family="Arial,sans-serif" font-size="30" text-anchor="middle">FINLAND</text>
+<text x="350" y="855" fill="#879b95" font-family="Arial,sans-serif" font-size="15" text-anchor="middle">ORYNT locator illustration</text>
+</svg>
