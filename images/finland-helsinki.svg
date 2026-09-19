@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#152b3b"/><stop offset="1" stop-color="#0b151c"/></linearGradient><linearGradient id="stone" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e7edf0"/><stop offset="1" stop-color="#9eabb2"/></linearGradient></defs>
+<rect width="1200" height="700" fill="url(#sky)"/><circle cx="980" cy="120" r="54" fill="#dce8ed" opacity=".75"/>
+<rect y="540" width="1200" height="160" fill="#17211f"/>
+<g transform="translate(145 95)">
+<path d="M80 445V260h100V445M300 445V260h100V445M520 445V260h100V445M740 445V260h100V445" fill="url(#stone)" stroke="#71808a" stroke-width="4"/>
+<path d="M35 260L130 175L225 260M255 260L350 175L445 260M475 260L570 175L665 260M695 260L790 175L885 260" fill="#c8d1d5" stroke="#71808a" stroke-width="4"/>
+<path d="M350 175V45h-16V18h32v27h-16v130M570 175V55h-13V28h26v27h-13v120" fill="#d9e1e4" stroke="#71808a" stroke-width="4"/>
+<path d="M455 445V115h30v-30h-12V55h24v30h-12v30h30v330" fill="#e8eef0" stroke="#71808a" stroke-width="5"/>
+<circle cx="485" cy="115" r="18" fill="#7e8d96"/><path d="M470 335h30v110h-30z" fill="#4a6b7d"/><path d="M350 300h42v145h-42zM578 300h42v145h-42zM120 300h38v145h-38zM800 300h38v145h-38z" fill="#4a6b7d"/>
+</g>
+<text x="70" y="650" fill="#d9e3e7" font-family="Arial,sans-serif" font-size="28" letter-spacing="3">HELSINKI · FINLAND</text>
+<text x="70" y="680" fill="#8fa0aa" font-family="Arial,sans-serif" font-size="15">ORYNT editorial illustration · stable local asset</text>
+</svg>
