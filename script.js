@@ -26,6 +26,35 @@ if(closeSearch&&modal){
 const langBtn=document.getElementById("langBtn");
 if(langBtn)langBtn.onclick=()=>{window.location.href="fa/index.html"};
 
+const launchCountdown=document.getElementById("launchCountdown");
+if(launchCountdown){
+  const target=Date.parse("2026-10-01T14:30:00+03:30");
+  const days=document.getElementById("countDays");
+  const hours=document.getElementById("countHours");
+  const minutes=document.getElementById("countMinutes");
+  const seconds=document.getElementById("countSeconds");
+
+  function updateLaunchCountdown(){
+    const diff=Math.max(0,target-Date.now());
+    const totalSeconds=Math.floor(diff/1000);
+    const d=Math.floor(totalSeconds/86400);
+    const h=Math.floor((totalSeconds%86400)/3600);
+    const m=Math.floor((totalSeconds%3600)/60);
+    const s=totalSeconds%60;
+    if(days)days.textContent=String(d).padStart(2,"0");
+    if(hours)hours.textContent=String(h).padStart(2,"0");
+    if(minutes)minutes.textContent=String(m).padStart(2,"0");
+    if(seconds)seconds.textContent=String(s).padStart(2,"0");
+    if(diff<=0){
+      launchCountdown.innerHTML='<div class="countdown-live">ORYNT is now live.</div>';
+      clearInterval(countdownTimer);
+    }
+  }
+
+  updateLaunchCountdown();
+  const countdownTimer=setInterval(updateLaunchCountdown,1000);
+}
+
 window.ORYNT_SEARCH_INDEX=[
  {title:"NVIDIA: From Graphics to the AI Infrastructure Era",url:"articles/nvidia-ai-infrastructure.html",category:"Technology",text:"GPU CUDA AI infrastructure Vera Rubin computing"},
  {title:"The race for next-generation chips is changing computing",url:"article-work.html",category:"Computing",text:"chips semiconductor computing"},
