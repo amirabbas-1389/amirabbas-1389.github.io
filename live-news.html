@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Live News — ORYNT</title>
+  <meta name="description" content="Live, source-first updates from science, space, technology, AI, computing and research.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .live-page{padding:70px 0 90px}
+    .live-header{display:flex;justify-content:space-between;gap:30px;align-items:end;border-bottom:1px solid var(--line);padding-bottom:22px}
+    .live-title{font-size:clamp(42px,6vw,70px);line-height:1;letter-spacing:-.04em;margin:0}
+    .live-intro{color:var(--muted);max-width:650px;margin:18px 0 0}
+    .live-list{margin-top:28px;display:grid;gap:12px}
+    .live-item{display:grid;grid-template-columns:120px 1fr auto;gap:22px;align-items:start;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}
+    .live-time{color:var(--muted);font-size:12px}
+    .live-item h2{font-size:21px;line-height:1.25;margin:0 0 8px}
+    .live-item p{color:var(--muted);margin:0}
+    .live-source{color:var(--accent);font-size:12px;white-space:nowrap}
+    .live-empty-page{margin-top:28px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:45px}
+    @media(max-width:700px){
+      .live-header{display:block}
+      .live-item{grid-template-columns:1fr;gap:10px}
+      .live-source{white-space:normal}
+      .live-empty-page{padding:28px}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html">ORYNT<span>.</span></a>
+    <nav>
+      <a href="index.html#science">Science</a><a href="index.html#space">Space</a><a href="index.html#tech">Technology</a><a href="index.html#computing">Computing</a><a href="index.html#research">Research</a><a href="index.html#world">World</a><a href="index.html#explained">Explained</a><a href="live-news.html">Live News</a>
+    </nav>
+    <div class="actions"><button id="langBtn" aria-label="Switch language">FA</button><button id="searchBtn" aria-label="Search">⌕</button></div>
+  </div>
+</header>
+<main>
+  <section class="container live-page">
+    <div class="live-header">
+      <div>
+        <p class="eyebrow live-eyebrow"><span class="live-dot" aria-hidden="true"></span> LIVE NEWS</p>
+        <h1 class="live-title">What is happening now.</h1>
+        <p class="live-intro">A continuously updated stream of verified developments across science, space, technology, AI, computing and research. ORYNT will add an item only after checking the source.</p>
+      </div>
+      <span class="meta">SOURCE-FIRST · VERIFIED UPDATES</span>
+    </div>
+    <div class="live-list">
+      <div class="live-empty-page">
+        <span class="tag">FEED READY</span>
+        <h2>Live News is ready for publication.</h2>
+        <p>New updates will appear here with the publication time, a concise factual summary and a direct source. This feed is intentionally separate from longer ORYNT articles so readers can follow fast-moving developments without changing the site's main editorial design.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="container footer-grid"><div><a class="brand" href="index.html">ORYNT<span>.</span></a><p>Science · Technology · World</p></div><div><a href="about.html">About</a><a href="editorial.html">Editorial policy</a><a href="sources.html">Sources</a><a href="contact.html">Contact</a><a href="advertise.html">Advertise</a><a href="media-kit.html">Media Kit</a></div><div><span>© 2026 ORYNT</span><span>Independent concept / prototype</span></div></div></footer>
+<div id="searchModal" class="modal" aria-hidden="true"><div class="modal-box"><button id="closeSearch">×</button><h2>Search ORYNT</h2><input id="searchInput" type="search" placeholder="Search science, space, technology..."><div id="searchResults"></div></div></div>
+<script src="script.js"></script>
+</body>
+</html>
