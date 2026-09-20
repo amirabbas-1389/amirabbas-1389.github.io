@@ -71,14 +71,13 @@ window.ORYNT_SEARCH_INDEX=[
  {title:"Explore the World: Interactive Country Map",url:"articles/world-explorer.html",category:"World",text:"countries map capital population currency region"},
  {title:"ANI vs AGI: Understanding Two Paths of Artificial Intelligence",url:"articles/ani-vs-agi.html",category:"Explained",text:"artificial intelligence ANI AGI AI agents"},
  {title:"U.S. Presidents, Vice Presidents and Inaugurations",url:"articles/us-presidents-vice-presidents-inaugurations.html",category:"World",text:"presidents vice presidents inaugurations history"},
+ {title:"Rolex: The History of a Watchmaking Icon",url:"articles/rolex-history.html",category:"Explained",text:"Rolex Hans Wilsdorf watchmaking Oyster Perpetual history precision"},
  {title:"Science",url:"science.html",category:"Science",text:"science research discoveries"},
  {title:"Space",url:"space.html",category:"Space",text:"space missions astronomy"},
  {title:"Technology",url:"technology.html",category:"Technology",text:"technology AI semiconductors"},
  {title:"Computing",url:"computing.html",category:"Computing",text:"computing chips software"},
  {title:"Research",url:"research.html",category:"Research",text:"papers research studies"},
  {title:"World",url:"world.html",category:"World",text:"world developments international affairs"},
- {title:"JFK Assassination: Claims, Evidence and What the Records Show",url:"articles/jfk-assassination-claims-evidence.html",category:"Explained",text:"JFK John F Kennedy assassination claims evidence Warren Commission House Select Committee historical records"},
- {title:"Princess Diana: Claims, Evidence and the Investigations",url:"articles/princess-diana-claims-evidence.html",category:"Explained",text:"Princess Diana conspiracy claims evidence Operation Paget investigation historical records"},
  {title:"Explained",url:"explained.html",category:"Explained",text:"explainers science technology"},
  {title:"Latest",url:"latest.html",category:"Latest",text:"latest ORYNT stories"}
 ];
@@ -89,6 +88,6 @@ if(input&&results){
     const q=input.value.trim().toLowerCase();
     if(!q){results.innerHTML="";return;}
     const m=window.ORYNT_SEARCH_INDEX.filter(x=>(x.title+" "+x.category+" "+x.text).toLowerCase().includes(q)).slice(0,8);
-    results.innerHTML=m.length?m.map(x=>`<a class="search-result" href="${x.url}"><span>${x.category}</span><strong>${x.title}</strong></a>`).join(""):"<p class=\"search-empty\">No ORYNT results found.</p>";
+    results.innerHTML=m.length?m.map(x=>`<a class="search-result" href="${x.url}"><span>${x.category}</span><strong>${x.title}</strong></a>`).join(""):"<p class="search-empty">No ORYNT results found.</p>";
   });
 }
