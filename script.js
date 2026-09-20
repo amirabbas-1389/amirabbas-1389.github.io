@@ -55,7 +55,7 @@ if(launchCountdown){
   const countdownTimer=setInterval(updateLaunchCountdown,1000);
 }
 
-window.ORYNT_SEARCH_INDEX=[
+window.ORYNT_SEARCH_INDEX=[ {title:"Live News",url:"live-news.html",category:"Live",text:"live news latest science technology space AI computing research"},
  {title:"NVIDIA: From Graphics to the AI Infrastructure Era",url:"articles/nvidia-ai-infrastructure.html",category:"Technology",text:"GPU CUDA AI infrastructure Vera Rubin computing"},
  {title:"The race for next-generation chips is changing computing",url:"article-work.html",category:"Computing",text:"chips semiconductor computing"},
  {title:"Apple and Sony: Two Strategies for the Next Technology Era",url:"articles/apple-sony.html",category:"Technology",text:"Apple Sony platforms sensors computing entertainment"},
