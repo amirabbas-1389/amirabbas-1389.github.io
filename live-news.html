@@ -46,29 +46,30 @@
       </div>
       <span class="meta">SOURCE-FIRST · VERIFIED UPDATES</span>
     </div>
-    <div class="live-list">
-      <article class="live-item">
-        <div class="live-time"><span class="tag">SPACE</span><br>20 Sep 2026</div>
-        <div><h2>NASA highlights new science and spaceflight developments</h2><p>NASA's latest science feed includes new observations from XRISM, ongoing International Space Station activity, and additional crew transportation missions awarded to SpaceX.</p></div>
-        <a class="live-source" href="https://science.nasa.gov/science-news/" target="_blank" rel="noopener">NASA Science →</a>
-      </article>
-      <article class="live-item">
-        <div class="live-time"><span class="tag">SPACE</span><br>18 Sep 2026</div>
-        <div><h2>ESA announces new Earth-observation contracts and upcoming Mars rover trials</h2><p>ESA announced contracts for studies supporting a future governmental Earth Observation service and publicized Mars rover field trials planned in Spain for 1 October.</p></div>
-        <a class="live-source" href="https://www.esa.int/Newsroom" target="_blank" rel="noopener">ESA Newsroom →</a>
-      </article>
-      <article class="live-item">
-        <div class="live-time"><span class="tag">SCIENCE</span><br>17 Sep 2026</div>
-        <div><h2>CERN begins installing upgraded CMS muon electronics</h2><p>During Long Shutdown 3, CERN teams began installing new electronics for CMS drift-tube chambers. The first upgraded chamber has already recorded real cosmic-ray muon signals.</p></div>
-        <a class="live-source" href="https://home.cern/science/long-shutdown-3/" target="_blank" rel="noopener">CERN →</a>
-      </article>
-      <article class="live-item">
-        <div class="live-time"><span class="tag tech">TECH</span><br>14 Sep 2026</div>
-        <div><h2>ASML sees growing adoption of High-NA EUV chipmaking technology</h2><p>ASML says major chipmakers are increasing commitments to its next-generation High Numerical Aperture EUV tools, which are designed to print smaller features for advanced semiconductor manufacturing.</p></div>
-        <a class="live-source" href="https://www.reuters.com/world/asia-pacific/asml-extends-chipmaking-dominance-customers-embrace-high-na-2026-09-14/" target="_blank" rel="noopener">Reuters →</a>
-      </article>
+    <div id="liveFeed" class="live-list" aria-live="polite">
+      <div class="live-empty-page"><span class="tag">LOADING</span><h2>Loading the latest verified updates.</h2><p>The live feed is refreshed automatically from ORYNT's configured source feeds.</p></div>
     </div>
+    <p class="meta" style="margin-top:18px">Automatic feed refresh · Source-first · Direct links to original reporting</p>
   </section>
+  <script>
+    (async function(){
+      const box=document.getElementById("liveFeed");
+      try{
+        const response=await fetch("live-news.json?"+Date.now(),{cache:"no-store"});
+        if(!response.ok)throw new Error("Feed unavailable");
+        const items=await response.json();
+        if(!Array.isArray(items)||!items.length)throw new Error("No items");
+        box.innerHTML=items.map(item=>`
+          <article class="live-item">
+            <div class="live-time"><span class="tag">${item.category||"NEWS"}</span><br>${item.time||""}</div>
+            <div><h2>${item.title}</h2><p>${item.summary}</p></div>
+            <a class="live-source" href="${item.url}" target="_blank" rel="noopener noreferrer">${item.source||"Source"} →</a>
+          </article>`).join("");
+      }catch(error){
+        box.innerHTML='<div class="live-empty-page"><span class="tag">FEED TEMPORARILY UNAVAILABLE</span><h2>Live News could not be loaded.</h2><p>Please try again shortly. ORYNT will not replace missing source data with invented stories.</p></div>';
+      }
+    })();
+  </script>
 </main>
 <footer><div class="container footer-grid"><div><a class="brand" href="index.html">ORYNT<span>.</span></a><p>Science · Technology · World</p></div><div><a href="about.html">About</a><a href="editorial.html">Editorial policy</a><a href="sources.html">Sources</a><a href="contact.html">Contact</a><a href="advertise.html">Advertise</a><a href="media-kit.html">Media Kit</a></div><div><span>© 2026 ORYNT</span><span>Independent concept / prototype</span></div></div></footer>
 <div id="searchModal" class="modal" aria-hidden="true"><div class="modal-box"><button id="closeSearch">×</button><h2>Search ORYNT</h2><input id="searchInput" type="search" placeholder="Search science, space, technology..."><div id="searchResults"></div></div></div>
