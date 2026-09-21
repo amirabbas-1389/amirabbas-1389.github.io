@@ -9,19 +9,29 @@ if(modal)modal.addEventListener("click",e=>{if(e.target===modal)closeORYNTSearch
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeORYNTSearch();});
 const langBtn=document.getElementById("langBtn");
 if(langBtn)langBtn.addEventListener("click",()=>window.location.assign("fa/index.html"));
+
 const launchCountdown=document.getElementById("launchCountdown");
 if(launchCountdown){
- const target=Date.UTC(2026,9,1,11,0,0);
+ const target=new Date("2026-10-01T14:30:00+03:30").getTime();
  const days=document.getElementById("countDays"),hours=document.getElementById("countHours"),minutes=document.getElementById("countMinutes"),seconds=document.getElementById("countSeconds");
  let countdownTimer=null;
  function updateLaunchCountdown(){
   const diff=target-Date.now();
-  if(diff<=0){launchCountdown.innerHTML='<div class="countdown-live">ORYNT is now live.</div>';if(countdownTimer)clearInterval(countdownTimer);return;}
+  if(diff<=0){
+   launchCountdown.innerHTML='<div class="countdown-live">ORYNT is now live.</div>';
+   if(countdownTimer)clearInterval(countdownTimer);
+   return;
+  }
   const t=Math.floor(diff/1000),d=Math.floor(t/86400),h=Math.floor((t%86400)/3600),m=Math.floor((t%3600)/60),s=t%60;
-  if(days)days.textContent=String(d).padStart(2,"0");if(hours)hours.textContent=String(h).padStart(2,"0");if(minutes)minutes.textContent=String(m).padStart(2,"0");if(seconds)seconds.textContent=String(s).padStart(2,"0");
+  if(days)days.textContent=String(d).padStart(2,"0");
+  if(hours)hours.textContent=String(h).padStart(2,"0");
+  if(minutes)minutes.textContent=String(m).padStart(2,"0");
+  if(seconds)seconds.textContent=String(s).padStart(2,"0");
  }
- updateLaunchCountdown();countdownTimer=setInterval(updateLaunchCountdown,1000);
+ updateLaunchCountdown();
+ countdownTimer=setInterval(updateLaunchCountdown,1000);
 }
+
 window.ORYNT_SEARCH_INDEX=[
 {title:"Live News",url:"live-news.html",category:"Live",text:"live news latest science technology space AI computing research"},
 {title:"How to Work at NASA",url:"articles/how-to-work-at-nasa.html",category:"Space · Careers",text:"NASA careers jobs work employee engineering science internships USAJOBS space career"},
