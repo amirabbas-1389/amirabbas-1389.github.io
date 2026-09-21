@@ -1,50 +1,56 @@
 [
   {
     "title": "NASA-JAXA XRISM mission sees a pulsar gathering a companion star's wind",
-    "category": "Space",
+    "category": "SPACE",
     "date": "2026-09-18",
+    "time": "18 Sep 2026",
     "source": "NASA Science",
     "url": "https://science.nasa.gov/missions/xrism/xrism-sees-pulsar-gathering-companions-wind/",
-    "summary": "XRISM observations gave astronomers a detailed look at a giant star's wind being captured by a compact companion, helping researchers study the process powering strong X-ray flares."
+    "summary": "XRISM observations captured detailed evidence of a giant star's wind being captured by its neutron-star companion, helping scientists study the process behind strong X-ray flares."
   },
   {
     "title": "NASA Hubble spots an out-of-sync galaxy",
-    "category": "Space",
+    "category": "SPACE",
     "date": "2026-09-18",
-    "source": "NASA Goddard",
-    "url": "https://www.nasa.gov/latest-goddard-news/",
-    "summary": "A new Hubble observation reveals a spiral galaxy whose apparently calm appearance hides a more chaotic environment."
+    "time": "18 Sep 2026",
+    "source": "NASA",
+    "url": "https://www.nasa.gov/",
+    "summary": "NASA highlights a new Hubble observation of a galaxy whose motion and surroundings reveal a more complex environment than its appearance suggests."
   },
   {
     "title": "NASA's Moon orbiter spots a new once-in-a-century crater",
-    "category": "Space",
+    "category": "SPACE",
     "date": "2026-09-16",
+    "time": "16 Sep 2026",
     "source": "NASA Science",
     "url": "https://science.nasa.gov/solar-system/moon/nasas-moon-orbiter-spots-new-once-in-century-moon-crater/",
-    "summary": "Lunar Reconnaissance Orbiter data revealed a newly formed crater on the Moon, offering researchers a rare chance to study a recent impact and its effects on the surrounding surface."
+    "summary": "Lunar Reconnaissance Orbiter data helped identify a newly formed lunar crater, giving scientists a rare opportunity to study a recent impact and its effects on the surrounding surface."
   },
   {
     "title": "CERN begins disconnecting the LHC for the HiLumi upgrade",
-    "category": "Research",
+    "category": "RESEARCH",
     "date": "2026-09-17",
+    "time": "17 Sep 2026",
     "source": "CERN",
     "url": "https://home.cern/the-disconnection-of-the-lhc-has-begun/",
-    "summary": "CERN has begun disconnecting focusing magnets around ATLAS and CMS as part of the Long Shutdown 3 work leading to the High-Luminosity LHC."
+    "summary": "CERN has begun disconnecting and dismantling focusing magnets around ATLAS and CMS as part of the third long shutdown and the move toward the High-Luminosity LHC."
   },
   {
-    "title": "CERN starts installing upgraded CMS muon electronics",
-    "category": "Research",
+    "title": "NASA continues Crew-13 preparations as astronauts enter quarantine",
+    "category": "SPACE",
     "date": "2026-09-17",
-    "source": "CERN",
-    "url": "https://home.cern/science/long-shutdown-3/",
-    "summary": "Teams have started installing new electronics for the CMS Drift Tube chambers, preparing the detector for the higher collision rates expected in the HiLumi LHC era."
+    "time": "17 Sep 2026",
+    "source": "NASA",
+    "url": "https://www.nasa.gov/",
+    "summary": "NASA reports that Crew-13 preparations continue as the astronauts enter quarantine ahead of their planned mission to the International Space Station."
   },
   {
-    "title": "NASA restores its Guam Remote Station after Typhoon Mawar",
-    "category": "Science",
-    "date": "2026-09-10",
-    "source": "NASA Goddard",
-    "url": "https://www.nasa.gov/latest-goddard-news/",
-    "summary": "NASA marked the full restoration of its Guam Remote Station, closing out a major recovery effort after damage from Typhoon Mawar."
+    "title": "NASA reports a new record-setting young planet",
+    "category": "SCIENCE",
+    "date": "2026-09-16",
+    "time": "16 Sep 2026",
+    "source": "NASA",
+    "url": "https://www.nasa.gov/",
+    "summary": "NASA highlights a newly reported planet described as a remarkably young world, adding another data point to the study of how planetary systems form."
   }
 ]
