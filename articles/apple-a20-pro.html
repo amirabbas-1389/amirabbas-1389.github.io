@@ -53,6 +53,30 @@
 <figcaption>iPhone 18 Pro and iPhone 18 Pro Max, powered by A20 Pro. Image: Apple.</figcaption>
 </figure>
 
+<section class="orynt-iphone3d" aria-labelledby="iphone3d-title">
+<style>
+.orynt-iphone3d{margin:3rem 0;padding:1.5rem;border:1px solid rgba(128,128,128,.28);border-radius:18px;background:linear-gradient(145deg,rgba(128,128,128,.08),rgba(128,128,128,.02));text-align:center}
+.orynt-iphone3d h2{margin-top:0}.iphone3d-controls{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;margin:1rem 0}.iphone3d-controls button{min-width:74px;padding:.65rem .8rem;border:1px solid currentColor;border-radius:999px;background:transparent;color:inherit;cursor:pointer;font-weight:700}.iphone3d-controls button.active{background:currentColor;color:var(--bg,#111)}.iphone3d-stage{height:390px;display:grid;place-items:center;perspective:900px;overflow:hidden;touch-action:none;cursor:grab}.iphone3d-stage.dragging{cursor:grabbing}.iphone3d{width:150px;height:305px;position:relative;transform-style:preserve-3d;transform:rotateX(-8deg) rotateY(-28deg);transition:transform .15s ease}.iphone3d .face{position:absolute;inset:0;border-radius:29px;border:3px solid #777;backface-visibility:hidden;box-shadow:0 18px 38px rgba(0,0,0,.28)}.iphone3d .front{background:linear-gradient(145deg,#202020,#050505);transform:translateZ(11px);padding:9px;box-sizing:border-box}.iphone3d .screen{width:100%;height:100%;border-radius:21px;background:radial-gradient(circle at 50% 15%,#343434,#090909 42%,#000);border:2px solid #111;position:relative}.iphone3d .island{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:45px;height:13px;border-radius:10px;background:#000}.iphone3d .back{background:linear-gradient(145deg,#d9d9d9,#777);transform:rotateY(180deg) translateZ(11px)}.iphone3d .camera{position:absolute;top:18px;left:16px;width:58px;height:58px;border-radius:17px;background:#222;border:2px solid #999}.iphone3d .lens{position:absolute;width:18px;height:18px;border-radius:50%;background:#050505;border:2px solid #aaa}.iphone3d .lens.one{top:7px;left:7px}.iphone3d .lens.two{top:7px;right:7px}.iphone3d .lens.three{bottom:7px;left:20px}.iphone3d .side{position:absolute;top:13px;bottom:13px;width:22px;background:linear-gradient(90deg,#555,#aaa,#555);border:2px solid #777;border-radius:10px}.iphone3d .left{left:-12px;transform:rotateY(90deg) translateZ(75px)}.iphone3d .right{right:-12px;transform:rotateY(90deg) translateZ(-75px)}.iphone3d-info{min-height:4.5rem}.iphone3d-info strong{font-size:1.2rem}.iphone3d-note{font-size:.85rem;opacity:.72;margin-bottom:0}.iphone3d-caption{font-size:.9rem;opacity:.75}
+</style>
+<h2 id="iphone3d-title">Explore iPhone 12–17 in 3D</h2>
+<p>Choose an iPhone generation and rotate the interactive model. This lightweight 3D viewer is built into Orynt and works with mouse or touch.</p>
+<div class="iphone3d-controls" role="group" aria-label="Choose iPhone model">
+<button type="button" data-model="12" class="active">iPhone 12</button><button type="button" data-model="13">iPhone 13</button><button type="button" data-model="14">iPhone 14</button><button type="button" data-model="15">iPhone 15</button><button type="button" data-model="16">iPhone 16</button><button type="button" data-model="17">iPhone 17</button>
+</div>
+<div class="iphone3d-stage" id="iphone3d-stage" aria-label="Interactive 3D iPhone viewer">
+<div class="iphone3d" id="iphone3d">
+<div class="face front"><div class="screen"><div class="island"></div></div></div>
+<div class="face back"><div class="camera"><span class="lens one"></span><span class="lens two"></span><span class="lens three"></span></div></div>
+<div class="side left"></div><div class="side right"></div>
+</div>
+</div>
+<div class="iphone3d-info" aria-live="polite"><strong id="iphone3d-name">iPhone 12</strong><br><span id="iphone3d-detail">6.1-inch class · 2020 generation</span></div>
+<p class="iphone3d-caption">The viewer is an interactive visual representation, not an official Apple CAD/AR asset. For iPhone 17 dimensions and specifications, see Apple’s technical specifications.</p>
+<script>
+(()=>{const root=document.currentScript.closest('.orynt-iphone3d');const phone=root.querySelector('#iphone3d');const stage=root.querySelector('#iphone3d-stage');const name=root.querySelector('#iphone3d-name');const detail=root.querySelector('#iphone3d-detail');const data={12:['iPhone 12','6.1-inch class · 2020 generation'],13:['iPhone 13','6.1-inch class · 2021 generation'],14:['iPhone 14','6.1-inch class · 2022 generation'],15:['iPhone 15','6.1-inch class · 2023 generation'],16:['iPhone 16','6.1-inch class · 2024 generation'],17:['iPhone 17','6.3-inch display · 2025 generation']};let x=-28,y=-8,drag=false,px=0,py=0;function render(){phone.style.transform='rotateX('+y+'deg) rotateY('+x+'deg)';}root.querySelectorAll('[data-model]').forEach(b=>b.addEventListener('click',()=>{root.querySelectorAll('[data-model]').forEach(q=>q.classList.remove('active'));b.classList.add('active');const d=data[b.dataset.model];name.textContent=d[0];detail.textContent=d[1];}));stage.addEventListener('pointerdown',e=>{drag=true;px=e.clientX;py=e.clientY;stage.classList.add('dragging');stage.setPointerCapture(e.pointerId)});stage.addEventListener('pointermove',e=>{if(!drag)return;x+=(e.clientX-px)*.55;y-=(e.clientY-py)*.35;y=Math.max(-55,Math.min(55,y));px=e.clientX;py=e.clientY;render()});stage.addEventListener('pointerup',()=>{drag=false;stage.classList.remove('dragging')});stage.addEventListener('pointercancel',()=>{drag=false;stage.classList.remove('dragging')});render();})();
+</script>
+</section>
+
 <h2>Neural Engine: 32 cores for on-device AI</h2>
 <p>Artificial intelligence is a central part of A20 Pro. Apple has equipped the chip with a <strong>Dual 16-core Neural Engine</strong>, giving it 32 Neural Engine cores in total.</p>
 <p>Apple says the new Neural Engine provides <strong>double the AI processing power of A19 Pro</strong>. The purpose is not simply to make benchmarks larger. The additional AI capability is intended for workloads such as on-device AI models and computational photography.</p>
