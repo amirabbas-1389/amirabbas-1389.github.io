@@ -1,56 +1,56 @@
 [
   {
-    "title": "NASA-JAXA XRISM mission sees a pulsar gathering a companion star's wind",
-    "category": "SPACE",
-    "date": "2026-09-18",
-    "time": "18 Sep 2026",
-    "source": "NASA Science",
-    "url": "https://science.nasa.gov/missions/xrism/xrism-sees-pulsar-gathering-companions-wind/",
-    "summary": "XRISM observations captured detailed evidence of a giant star's wind being captured by its neutron-star companion, helping scientists study the process behind strong X-ray flares."
+    "title": "2026 U.S. congressional midterms: Missouri map dispute heads back toward Supreme Court",
+    "category": "WORLD",
+    "date": "2026-09-21",
+    "time": "21 Sep 2026",
+    "source": "Reuters",
+    "url": "https://www.reuters.com/legal/government/us-appeals-court-backs-missouris-republican-drawn-congressional-map-sets-up-2026-09-21/",
+    "summary": "A U.S. appeals court backed a Republican-drawn Missouri congressional map, but its ruling was paused until September 28 while the Supreme Court has time to respond."
   },
   {
-    "title": "NASA Hubble spots an out-of-sync galaxy",
-    "category": "SPACE",
-    "date": "2026-09-18",
-    "time": "18 Sep 2026",
-    "source": "NASA",
-    "url": "https://www.nasa.gov/",
-    "summary": "NASA highlights a new Hubble observation of a galaxy whose motion and surroundings reveal a more complex environment than its appearance suggests."
+    "title": "Grok 4.7 is introduced for coding and knowledge work",
+    "category": "AI",
+    "date": "2026-09-21",
+    "time": "21 Sep 2026",
+    "source": "xAI",
+    "url": "https://x.ai/news/grok-4-7",
+    "summary": "xAI introduced Grok 4.7 with a larger base model, longer reinforcement-learning training on difficult tasks and an emphasis on checking work more carefully."
   },
   {
-    "title": "NASA's Moon orbiter spots a new once-in-a-century crater",
-    "category": "SPACE",
-    "date": "2026-09-16",
-    "time": "16 Sep 2026",
-    "source": "NASA Science",
-    "url": "https://science.nasa.gov/solar-system/moon/nasas-moon-orbiter-spots-new-once-in-century-moon-crater/",
-    "summary": "Lunar Reconnaissance Orbiter data helped identify a newly formed lunar crater, giving scientists a rare opportunity to study a recent impact and its effects on the surrounding surface."
+    "title": "Saudi Arabia unveils CEER EXOBOT electric sedan and SUV",
+    "category": "TECHNOLOGY",
+    "date": "2026-09-21",
+    "time": "21 Sep 2026",
+    "source": "Public Investment Fund",
+    "url": "https://www.pif.gov.sa/en/news-and-insights/newswire/2026/hrh-the-crown-prince-launches-ceers-flagship-vehicles-further-strengthening-saudi-arabias-position-in-the-global-automotive-industry/",
+    "summary": "Saudi automotive brand CEER revealed an electric sedan and SUV under the EXOBOT name."
   },
   {
-    "title": "CERN begins disconnecting the LHC for the HiLumi upgrade",
+    "title": "Trump approval measured at 32% in new Reuters/Ipsos poll",
+    "category": "WORLD",
+    "date": "2026-09-21",
+    "time": "21 Sep 2026",
+    "source": "Reuters/Ipsos",
+    "url": "https://www.reuters.com/world/us/trump-approval-falls-career-low-32-high-costs-bite-reutersipsos-poll-finds-2026-09-21/",
+    "summary": "A Reuters/Ipsos poll of 1,277 U.S. adults found 32% approval for President Donald Trump and a 43%-35% Democratic-Republican split among registered voters asked which party they would support for Congress."
+  },
+  {
+    "title": "CERN begins disconnecting the LHC for the High-Luminosity upgrade",
     "category": "RESEARCH",
     "date": "2026-09-17",
     "time": "17 Sep 2026",
     "source": "CERN",
     "url": "https://home.cern/the-disconnection-of-the-lhc-has-begun/",
-    "summary": "CERN has begun disconnecting and dismantling focusing magnets around ATLAS and CMS as part of the third long shutdown and the move toward the High-Luminosity LHC."
+    "summary": "CERN has begun disconnecting and dismantling focusing magnets around ATLAS and CMS as part of the third long shutdown."
   },
   {
-    "title": "NASA continues Crew-13 preparations as astronauts enter quarantine",
+    "title": "XRISM observes a pulsar gathering a companion star’s wind",
     "category": "SPACE",
-    "date": "2026-09-17",
-    "time": "17 Sep 2026",
-    "source": "NASA",
-    "url": "https://www.nasa.gov/",
-    "summary": "NASA reports that Crew-13 preparations continue as the astronauts enter quarantine ahead of their planned mission to the International Space Station."
-  },
-  {
-    "title": "NASA reports a new record-setting young planet",
-    "category": "SCIENCE",
-    "date": "2026-09-16",
-    "time": "16 Sep 2026",
-    "source": "NASA",
-    "url": "https://www.nasa.gov/",
-    "summary": "NASA highlights a newly reported planet described as a remarkably young world, adding another data point to the study of how planetary systems form."
+    "date": "2026-09-18",
+    "time": "18 Sep 2026",
+    "source": "NASA Science",
+    "url": "https://science.nasa.gov/missions/xrism/xrism-sees-pulsar-gathering-companions-wind/",
+    "summary": "XRISM observations captured evidence of a giant star’s wind being captured by its neutron-star companion."
   }
 ]
