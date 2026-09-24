@@ -1,12 +1,39 @@
 [
   {
-    "title": "2026 U.S. congressional midterms: Missouri map dispute heads back toward Supreme Court",
-    "category": "WORLD",
-    "date": "2026-09-21",
-    "time": "21 Sep 2026",
+    "title": "NASA selects PRIMA as first mission in a new far-infrared telescope class",
+    "category": "SPACE",
+    "date": "2026-09-23",
+    "time": "23 Sep 2026",
+    "source": "NASA",
+    "url": "https://www.nasa.gov/news-release/nasa-selects-far-infrared-telescope-as-first-new-mission-class/",
+    "summary": "NASA announced that PRIMA, a far-infrared space telescope concept, is advancing to the next phase of development to study the history and evolution of the universe."
+  },
+  {
+    "title": "Hubble reaches 200,000 orbits around Earth",
+    "category": "SPACE",
+    "date": "2026-09-23",
+    "time": "23 Sep 2026",
+    "source": "NASA",
+    "url": "https://science.nasa.gov/missions/hubble/nasas-hubble-seeks-lensed-supernova-marks-200000-orbits/",
+    "summary": "NASA reported that the Hubble Space Telescope completed its 200,000th orbit on September 19 while continuing observations of distant astronomical objects."
+  },
+  {
+    "title": "NASA reports 2026 Arctic sea-ice minimum",
+    "category": "SCIENCE",
+    "date": "2026-09-23",
+    "time": "23 Sep 2026",
+    "source": "NASA",
+    "url": "https://science.nasa.gov/earth/arctic-sea-ice-reaches-2026-annual-minimum-extent/",
+    "summary": "NASA and the National Snow and Ice Data Center reported that Arctic sea ice reached its 2026 annual minimum on September 12, covering an estimated 4.6 million square kilometers."
+  },
+  {
+    "title": "UN chief calls for global safeguards and oversight for AI",
+    "category": "AI",
+    "date": "2026-09-22",
+    "time": "22 Sep 2026",
     "source": "Reuters",
-    "url": "https://www.reuters.com/legal/government/us-appeals-court-backs-missouris-republican-drawn-congressional-map-sets-up-2026-09-21/",
-    "summary": "A U.S. appeals court backed a Republican-drawn Missouri congressional map, but its ruling was paused until September 28 while the Supreme Court has time to respond."
+    "url": "https://www.reuters.com/world/europe/un-chief-calls-ai-curbs-end-wars-his-last-assembly-address-2026-09-22/",
+    "summary": "In his final UN General Assembly address, Secretary-General Antonio Guterres called for international cooperation on AI safety testing, evaluation and a multilateral risk-management framework."
   },
   {
     "title": "Grok 4.7 is introduced for coding and knowledge work",
@@ -25,15 +52,6 @@
     "source": "Public Investment Fund",
     "url": "https://www.pif.gov.sa/en/news-and-insights/newswire/2026/hrh-the-crown-prince-launches-ceers-flagship-vehicles-further-strengthening-saudi-arabias-position-in-the-global-automotive-industry/",
     "summary": "Saudi automotive brand CEER revealed an electric sedan and SUV under the EXOBOT name."
-  },
-  {
-    "title": "Trump approval measured at 32% in new Reuters/Ipsos poll",
-    "category": "WORLD",
-    "date": "2026-09-21",
-    "time": "21 Sep 2026",
-    "source": "Reuters/Ipsos",
-    "url": "https://www.reuters.com/world/us/trump-approval-falls-career-low-32-high-costs-bite-reutersipsos-poll-finds-2026-09-21/",
-    "summary": "A Reuters/Ipsos poll of 1,277 U.S. adults found 32% approval for President Donald Trump and a 43%-35% Democratic-Republican split among registered voters asked which party they would support for Congress."
   },
   {
     "title": "CERN begins disconnecting the LHC for the High-Luminosity upgrade",
