@@ -1,5 +1,50 @@
 [
   {
+    "title": "Senate prepares possible war-powers vote as Iran war enters midterm debate",
+    "category": "WORLD",
+    "date": "2026-09-24",
+    "time": "24 Sep 2026",
+    "source": "Reuters",
+    "url": "https://www.reuters.com/",
+    "summary": "U.S. Senate leaders were considering a nonbinding war-powers vote as Democrats sought to put senators on record over the Iran conflict ahead of the November midterm elections; some Republicans have differed with President Trump on the issue."
+  },
+  {
+    "title": "Political committees increase coordinated spending ahead of U.S. midterms",
+    "category": "WORLD",
+    "date": "2026-09-24",
+    "time": "24 Sep 2026",
+    "source": "Reuters",
+    "url": "https://www.reuters.com/",
+    "summary": "Reuters reported that Republican and Democratic campaign committees have increased coordinated spending after a June Supreme Court ruling removed federal caps that had limited such spending."
+  },
+  {
+    "title": "White House pushes accelerated review of voter rolls before midterms",
+    "category": "WORLD",
+    "date": "2026-09-24",
+    "time": "24 Sep 2026",
+    "source": "Reuters",
+    "url": "https://www.reuters.com/",
+    "summary": "Reuters reported that federal agencies are reviewing voter rolls from at least 47 states as the White House pushes an accelerated effort to identify possible noncitizen registrations; the administration says the initiative is aimed at election integrity."
+  },
+  {
+    "title": "Missouri congressional map dispute remains before Supreme Court",
+    "category": "WORLD",
+    "date": "2026-09-21",
+    "time": "21 Sep 2026",
+    "source": "Reuters",
+    "url": "https://www.reuters.com/legal/government/us-appeals-court-backs-missouris-republican-drawn-congressional-map-sets-up-2026-09-21/",
+    "summary": "An appeals court backed Missouri's Republican-drawn congressional map but paused its ruling until September 28 while the Supreme Court has time to respond. Missouri officials are using the prior map for now."
+  },
+  {
+    "title": "Reuters/Ipsos poll measures Trump approval at 32%",
+    "category": "WORLD",
+    "date": "2026-09-21",
+    "time": "21 Sep 2026",
+    "source": "Reuters/Ipsos",
+    "url": "https://www.reuters.com/world/us/trump-approval-falls-career-low-32-high-costs-bite-reutersipsos-poll-finds-2026-09-21/",
+    "summary": "A Reuters/Ipsos poll of 1,277 U.S. adults measured President Donald Trump's approval at 32%. Among registered voters asked about congressional preference, 43% chose Democratic candidates and 35% Republican candidates; the poll's margin of error was 3 percentage points."
+  },
+  {
     "title": "NASA selects PRIMA as first mission in a new far-infrared telescope class",
     "category": "SPACE",
     "date": "2026-09-23",
@@ -61,14 +106,5 @@
     "source": "CERN",
     "url": "https://home.cern/the-disconnection-of-the-lhc-has-begun/",
     "summary": "CERN has begun disconnecting and dismantling focusing magnets around ATLAS and CMS as part of the third long shutdown."
-  },
-  {
-    "title": "XRISM observes a pulsar gathering a companion star’s wind",
-    "category": "SPACE",
-    "date": "2026-09-18",
-    "time": "18 Sep 2026",
-    "source": "NASA Science",
-    "url": "https://science.nasa.gov/missions/xrism/xrism-sees-pulsar-gathering-companions-wind/",
-    "summary": "XRISM observations captured evidence of a giant star’s wind being captured by its neutron-star companion."
   }
 ]
