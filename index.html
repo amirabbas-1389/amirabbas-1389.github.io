@@ -15,7 +15,9 @@
     .countdown-label{display:block;margin-top:8px;color:var(--muted);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
     .countdown-note{margin:16px 0 0;color:var(--muted);font-size:13px}
     .countdown-live{font-size:22px;font-weight:700;color:var(--accent);padding:28px;text-align:center;background:var(--panel);border:1px solid var(--line);margin-top:24px}
-    @media(max-width:560px){.countdown-grid{grid-template-columns:repeat(2,1fr)}.countdown-unit{padding:20px 12px}}
+    .orynt-poll-frame{width:100%;min-height:430px;border:0;background:var(--panel);display:block}
+    .orynt-poll-note{margin-top:14px;color:var(--muted);font-size:13px}
+    @media(max-width:560px){.countdown-grid{grid-template-columns:repeat(2,1fr)}.countdown-unit{padding:20px 12px}.orynt-poll-frame{min-height:500px}}
   </style>
 </head>
 <body>
@@ -66,26 +68,18 @@
       </div>
     </div>
   </section>
+
   <section id="orynt-poll" class="container section" aria-labelledby="orynt-poll-title">
     <div class="section-head">
       <div><p class="eyebrow">ORYNT COMMUNITY POLL</p><h2 id="orynt-poll-title">What should we cover more?</h2></div>
-      <span class="meta">Your opinion shapes future coverage</span>
+      <span class="meta">24-hour vote</span>
     </div>
     <div class="explained" style="margin-top:24px">
       <div>
-        <h3>Which ORYNT topics would you like to see more often?</h3>
-        <p>Choose the areas you care about most. This quick poll helps us decide where to focus future articles and explainers.</p>
-        <form id="oryntPoll" style="margin-top:20px">
-          <label><input type="radio" name="topic" value="Science"> Science</label><br>
-          <label><input type="radio" name="topic" value="Space"> Space</label><br>
-          <label><input type="radio" name="topic" value="Technology"> Technology</label><br>
-          <label><input type="radio" name="topic" value="Computing"> Computing</label><br>
-          <label><input type="radio" name="topic" value="Research"> Research</label><br>
-          <label><input type="radio" name="topic" value="World"> World</label><br>
-          <label><input type="radio" name="topic" value="Explained"> Explained</label><br>
-          <button class="button primary" type="submit" style="margin-top:18px">Vote</button>
-        </form>
-        <p id="pollMessage" class="meta" aria-live="polite"></p>
+        <h3>Which ORYNT topic should get more coverage?</h3>
+        <p>Choose one topic. The poll is anonymous and will help guide Orynt's next articles and explainers.</p>
+        <iframe class="orynt-poll-frame" title="ORYNT community poll" src="https://us.posthog.com/external_surveys/01a1074a-bf4d-0000-3e63-a4f2de0e1f7b/?embed=true" loading="lazy"></iframe>
+        <p class="orynt-poll-note">Voting closes 24 hours after launch. No name or email is requested.</p>
       </div>
       <div class="explainer-list">
         <div><span>01</span><strong>Science — discoveries, biology, chemistry & physics</strong></div>
@@ -98,6 +92,7 @@
       </div>
     </div>
   </section>
+
   <section id="latest" class="container section"><div class="section-head"><h2>Latest</h2><a href="latest.html">View all →</a></div><div class="news-grid">
     <article class="news-card"><span class="tag science">SCIENCE</span><h3>How researchers turn difficult questions into testable discoveries</h3><p>From laboratories to peer-reviewed research, a guide to how modern science moves forward.</p><span class="meta">6 min read</span></article>
     <article class="news-card"><span class="tag space">SPACE</span><h3><a href="articles/how-to-work-at-nasa.html">How to Work at NASA</a></h3><p>How NASA hires, what kinds of people work there, and what employees say about life at the agency.</p><span class="meta">Space · Careers</span></article>
