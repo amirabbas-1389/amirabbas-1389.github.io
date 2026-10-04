@@ -15,9 +15,9 @@
     .countdown-label{display:block;margin-top:8px;color:var(--muted);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
     .countdown-note{margin:16px 0 0;color:var(--muted);font-size:13px}
     .countdown-live{font-size:22px;font-weight:700;color:var(--accent);padding:28px;text-align:center;background:var(--panel);border:1px solid var(--line);margin-top:24px}
-    .orynt-poll-frame{width:100%;min-height:430px;border:0;background:var(--panel);display:block}
+    .orynt-poll-direct{padding:28px;background:var(--panel);border:1px solid var(--line)}
     .orynt-poll-note{margin-top:14px;color:var(--muted);font-size:13px}
-    @media(max-width:560px){.countdown-grid{grid-template-columns:repeat(2,1fr)}.countdown-unit{padding:20px 12px}.orynt-poll-frame{min-height:500px}}
+    @media(max-width:560px){.countdown-grid{grid-template-columns:repeat(2,1fr)}.countdown-unit{padding:20px 12px}}
   </style>
 </head>
 <body>
@@ -78,8 +78,8 @@
       <div>
         <h3>Which ORYNT topic should get more coverage?</h3>
         <p>Choose one topic. The poll is anonymous and will help guide Orynt's next articles and explainers.</p>
-        <iframe class="orynt-poll-frame" title="ORYNT community poll" src="https://us.posthog.com/external_surveys/01a1074a-bf4d-0000-3e63-a4f2de0e1f7b/?embed=true" loading="lazy"></iframe>
-        <p class="orynt-poll-note">Voting closes 24 hours after launch. No name or email is requested.</p>
+        <div class="orynt-poll-direct"><p>Select one topic and submit your vote on the ORYNT poll.</p><a class="button primary" href="https://us.posthog.com/external_surveys/01a1074a-bf4d-0000-3e63-a4f2de0e1f7b/" target="_blank" rel="noopener">Vote in the 24-hour poll →</a><p class="orynt-poll-note">The poll opens in a secure PostHog page so your vote can be recorded correctly.</p></div>
+        <p class="orynt-poll-note">Voting closes on 5 October 2026 at 14:21 UTC. No name or email is requested.</p>
       </div>
       <div class="explainer-list">
         <div><span>01</span><strong>Science — discoveries, biology, chemistry & physics</strong></div>
