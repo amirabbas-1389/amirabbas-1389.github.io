@@ -20,7 +20,7 @@
     .gov-video-frame{aspect-ratio:16/9;background:#030507}
     .gov-video-frame iframe{display:block;width:100%;height:100%;border:0;background:#030507}
     .gov-video-card>p{font-size:12px;color:var(--muted);padding:0 16px 16px;margin:12px 0 0}
-    .gov-live-note{margin:18px 0 0;color:var(--muted);font-size:12px}
+    .gov-live-note{margin:18px 0 0;color:var(--muted);font-size:12px}\n    .gov-official-link{display:inline-block;margin:0 16px 16px;color:var(--accent);font-size:12px;font-weight:700}
     .gov-live-note strong{color:var(--text)}
     .live-page{padding:70px 0 90px}
     .live-header{display:flex;justify-content:space-between;gap:30px;align-items:end;border-bottom:1px solid var(--line);padding-bottom:22px}
@@ -64,30 +64,32 @@
     <section class="gov-live" aria-labelledby="govLiveTitle">
       <div class="gov-live-head">
         <div>
-          <p class="eyebrow">ORYNT LIVE DESK · PREMIUM CONCEPT</p>
+          <p class="eyebrow">ORYNT LIVE DESK</p>
           <h2 id="govLiveTitle">U.S. Government — Live Video</h2>
-          <p>Official live feeds for selected presidential events and congressional proceedings. A stream appears only when the original broadcaster is transmitting.</p>
+          <p>Official government broadcasts. If an event is not live or the broadcaster blocks embedded playback, use the built-in player on the official page.</p>
         </div>
-        <span class="premium-pill">PREMIUM CONCEPT</span>
       </div>
       <div class="gov-video-grid">
         <article class="gov-video-card">
           <div class="gov-video-title"><span class="gov-live-indicator"></span><h3>White House</h3></div>
-          <div class="gov-video-frame"><iframe src="https://www.whitehouse.gov/live/" title="Official White House live broadcast" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-          <p>Presidential remarks, briefings and official events. The White House currently shows an off-air state when no event is being broadcast.</p>
+          <div class="gov-video-frame"><iframe src="https://www.whitehouse.gov/live/" title="White House official live page" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+          <p>Presidential events and briefings. The official page may show Off Air when no event is underway.</p>
+          <a class="gov-official-link" href="https://www.whitehouse.gov/live/" target="_blank" rel="noopener noreferrer">Open official White House player ↗</a>
         </article>
         <article class="gov-video-card">
           <div class="gov-video-title"><span class="gov-live-indicator"></span><h3>U.S. House of Representatives</h3></div>
-          <div class="gov-video-frame"><iframe src="https://live.house.gov/" title="Official U.S. House floor proceedings" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-          <p>House floor proceedings. Committee hearings may use separate official committee feeds.</p>
+          <div class="gov-video-frame"><iframe src="https://live.house.gov/" title="House FloorCast official live page" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+          <p>House floor proceedings and floor activity.</p>
+          <a class="gov-official-link" href="https://live.house.gov/" target="_blank" rel="noopener noreferrer">Open official House FloorCast ↗</a>
         </article>
         <article class="gov-video-card">
           <div class="gov-video-title"><span class="gov-live-indicator"></span><h3>U.S. Senate</h3></div>
-          <div class="gov-video-frame"><iframe src="https://floor.senate.gov/ViewPublisher.php?autostart=1&amp;view_id=16" title="Official U.S. Senate floor webcast" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-          <p>Senate floor webcast while the Senate is in session.</p>
+          <div class="gov-video-frame"><iframe src="https://www.senate.gov/floor/" title="Senate official floor webcast page" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+          <p>Senate floor webcast when the Senate is in session.</p>
+          <a class="gov-official-link" href="https://www.senate.gov/floor/" target="_blank" rel="noopener noreferrer">Open official Senate webcast ↗</a>
         </article>
       </div>
-      <p class="gov-live-note"><strong>Membership note:</strong> This is an integration test, not an active paid service. ORYNT is currently a static site, so a secure membership gate and payment checkout must be connected before charging users. Embedding may also be blocked by a broadcaster's security settings; unavailable feeds will not be replaced with fake video.</p>
+      <p class="gov-live-note"><strong>Status:</strong> Embedded playback is not verified yet. ORYNT is not charging for this test section; paid access requires a secure membership and payment system and confirmation of commercial-use permissions.</p>
     </section>
     <div id="liveFeed" class="live-list" aria-live="polite">
       <div class="live-empty-page"><span class="tag">LOADING</span><h2>Loading the latest verified updates.</h2><p>The live feed is refreshed automatically from ORYNT's configured source feeds.</p></div>
